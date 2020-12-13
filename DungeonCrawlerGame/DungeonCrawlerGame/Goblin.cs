@@ -4,9 +4,8 @@ using System.Text;
 
 namespace DungeonCrawlerGame
 {
-    class Goblin : Monster
+   class Goblin : Monster
     {
-
         public Goblin()
         {
             Random random = new Random();
@@ -16,7 +15,10 @@ namespace DungeonCrawlerGame
             Damage = random.Next(5);
             Experience = random.Next(30);
         }
-    }
 
-
+        public override double Napad(ref Hero heroj, ref List<Monster> cudovista)
+        {
+            return Damage;
+        }
     }
+}

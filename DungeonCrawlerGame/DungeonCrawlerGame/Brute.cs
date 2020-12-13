@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace DungeonCrawlerGame
 {
@@ -21,5 +20,18 @@ namespace DungeonCrawlerGame
             CriticalChance = random.Next(100);
         }
 
+        public override double Napad(ref Hero heroj, ref List<Monster> cudovista)
+        {
+            Random random = new Random();
+            int randomBroj = random.Next(100);
+            if (randomBroj >= 0 && randomBroj <= CriticalChance)
+            {
+                return heroj.CurrentHealthPoints * random.NextDouble();
+            }
+            else
+            {
+                return Damage;
+            }
+        }
     }
 }

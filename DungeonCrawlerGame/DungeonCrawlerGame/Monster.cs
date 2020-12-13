@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace DungeonCrawlerGame
 {
@@ -20,7 +19,12 @@ namespace DungeonCrawlerGame
         public double ChanceOfAppearance { get => chanceOfAppearance; set => chanceOfAppearance = value; }
         public string Name { get => name; set => name = value; }
 
-    
+        public abstract double Napad(ref Hero heroj, ref List<Monster> cudovista);
+        public virtual int MonsterDefeated(ref List<Monster> cudovista)
+        {
+            return Experience;
+        }
+
         public void Status()
         {
             Console.WriteLine(Name);
